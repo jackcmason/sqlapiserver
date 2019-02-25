@@ -22,7 +22,7 @@ app.get('/kits', (req, res) => {
         if(err) {
             return res.send(err)
         } else {
-            return res.json(results)
+            return res.json({data: results})
         }
     })
 });
@@ -44,7 +44,7 @@ app.get('/locations', (req, res) => {
         if(err) {
             return res.send(err)
         } else {
-            return res.json(results)
+            return res.json({data: results})
         }
     })
 });
