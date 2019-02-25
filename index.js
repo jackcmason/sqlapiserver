@@ -49,6 +49,36 @@ app.get('/locations', (req, res) => {
     })
 });
 
+app.get('/kitlocations', (req, res) => {
+    connection.query(queries.KIT_LOCATIONS_QUERY, (err, results) => {
+        if(err) {
+            return res.send(err)
+        } else {
+            return res.json({data: results})
+        }
+    })
+});
+
+app.get('/people', (req, res) => {
+    connection.query(queries.SELECT_PEOPLE_QUERY, (err, results) => {
+        if(err) {
+            return res.send(err)
+        } else {
+            return res.json({data: results})
+        }
+    })
+});
+
+app.get('/groups', (req, res) => {
+    connection.query(queries.SELECT_GROUPS_QUERY, (err, results) => {
+        if(err) {
+            return res.send(err)
+        } else {
+            return res.json({data: results})
+        }
+    })
+});
+
 app.listen(4000, () => {
     console.log("Listening on 4000")
 });
